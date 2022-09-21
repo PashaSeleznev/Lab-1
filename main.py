@@ -35,12 +35,14 @@ print()
 
 rows_1 = []
 for row in rows:
-    if row[12] not in rows_1:
-        rows_1.append(row[12])
-        if '#' in row[12]:
-            print(row[12].replace('#', ''))
-        else:
-            print(row[12])
+    row_1 = row[12].split('#')
+    for i in row_1:
+        if i not in rows_1:
+            if i[0] == ' ':
+                i = i.replace(' ', '', 1)
+            rows_1.append(i)
+            print(i)
+
 
 print()
 
